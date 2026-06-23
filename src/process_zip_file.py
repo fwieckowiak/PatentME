@@ -131,7 +131,7 @@ def process_single_zip(zip_path, output_dir):
                     'img_content': img_content,
                     'img_format': img_format,
                     'img_id': f"{folder.name}_{img_file}",
-                    'mml': mml_content
+                    'mathml': mml_content
                 })
 
     # cleanup temp extraction
@@ -158,7 +158,7 @@ def process_all_zips(zip_folder, output_dir):
 
     # save CSV
     df = pd.DataFrame(all_data)
-    df['mml'] = df['mml'].str.replace('<mtext> </mtext>', '<mtext>\u00A0</mtext>')
+    df['mathml'] = df['mathml'].str.replace('<mtext> </mtext>', '<mtext>\u00A0</mtext>')
     csv_path = output_dir / "raw_data.csv"
     df.to_csv(csv_path, index=False)
     print(f"Saved CSV: {csv_path}")

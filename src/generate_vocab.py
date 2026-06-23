@@ -116,16 +116,16 @@ if __name__ == "__main__":
 
     #add an arg parser to specify the path to the processed data
     #before using it !! do data cleaning
-    #python3 /data/fwieckowiak/public_PIEMER/bench_mer_hf/conversions/mml_cleaner.py /data/fwieckowiak/PatentME-Generator/processed_data_v1/raw_data.csv
+    #python3 mml_cleaner.py raw_data.csv
     #using the script python3 mml_cleaner.py "path_to_raw_data"
     #then use this one :
-    #python3 generate_vocab.py --processed_data_path "/data/fwieckowiak/PatentME-Generator/processed_data_v1"
+    #python3 generate_vocab.py --processed_data_path "processed_data_v1"
     import argparse
     parser = argparse.ArgumentParser(description="Generate vocab from cleaned data")
     parser.add_argument(
         "--processed_data_path",
         type=str,
-        default="/data/fwieckowiak/PatentME-Generator/processed_data",
+        default="../processed_data",
         help="Path to the processed data",
     )
     parser.add_argument(
